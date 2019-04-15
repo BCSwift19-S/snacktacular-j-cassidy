@@ -19,6 +19,7 @@
 		71537582225281AF006ED902 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71537581225281AF006ED902 /* Spot.swift */; };
 		715375842252826E006ED902 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715375832252826E006ED902 /* Spots.swift */; };
 		71A978D7225296ED00EB7955 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71A978D6225296ED00EB7955 /* GoogleService-Info.plist */; };
+		71BB1958226508FF0019D9D2 /* Double+Roundto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BB1957226508FF0019D9D2 /* Double+Roundto.swift */; };
 		8F1590800C553361EA044477 /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D57DA08A1BB2DA9B7DE9F674 /* Pods_Snacktacular.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		71537581225281AF006ED902 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		715375832252826E006ED902 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		71A978D6225296ED00EB7955 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		71BB1957226508FF0019D9D2 /* Double+Roundto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Roundto.swift"; sourceTree = "<group>"; };
 		D090C2106802B3E44626E36A /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
 		D57DA08A1BB2DA9B7DE9F674 /* Pods_Snacktacular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snacktacular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				3E0F960920659D9000AE450D /* SpotsTableViewCell.swift */,
 				3E0F960D2065AB6400AE450D /* SpotReviewsTableViewCell.swift */,
 				3E0F960F2065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift */,
+				71BB1957226508FF0019D9D2 /* Double+Roundto.swift */,
 				3E8390E3206597F600512DEA /* Main.storyboard */,
 				3E8390E6206597F600512DEA /* Assets.xcassets */,
 				3E8390E8206597F600512DEA /* LaunchScreen.storyboard */,
@@ -309,6 +312,7 @@
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
 				3E0F960E2065AB6400AE450D /* SpotReviewsTableViewCell.swift in Sources */,
 				3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */,
+				71BB1958226508FF0019D9D2 /* Double+Roundto.swift in Sources */,
 				71537582225281AF006ED902 /* Spot.swift in Sources */,
 				3E8390E0206597F600512DEA /* AppDelegate.swift in Sources */,
 				715375842252826E006ED902 /* Spots.swift in Sources */,
