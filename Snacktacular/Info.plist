@@ -62,5 +62,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Spectacular will need access to camera in order to post photos</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Spectacular will need access to photos in order to post </string>
 </dict>
 </plist>
