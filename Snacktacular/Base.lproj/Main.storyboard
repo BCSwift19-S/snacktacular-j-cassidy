@@ -143,14 +143,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Restaurant Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QE-cW-8Sq">
-                                            <rect key="frame" x="179" y="8" width="188" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Address" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4WS-yq-rPw">
                                             <rect key="frame" x="8" y="35" width="359" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -236,6 +228,18 @@
                                             <rect key="frame" x="0.0" y="55" width="375" height="180"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </mapView>
+                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Restaurant Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QE-cW-8Sq">
+                                            <rect key="frame" x="8" y="8" width="359" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="24"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            <connections>
+                                                <action selector="textFieldEditingChanged:" destination="L7d-5i-Cie" eventType="editingDidEnd" id="rlT-Xi-raf"/>
+                                                <action selector="textFieldReturnPressed:" destination="L7d-5i-Cie" eventType="editingDidEnd" id="dC7-Nu-FHq"/>
+                                            </connections>
+                                        </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -324,9 +328,11 @@
                     <connections>
                         <outlet property="addressField" destination="4WS-yq-rPw" id="P0N-6s-snq"/>
                         <outlet property="averageRatingLabel" destination="B7N-4G-a6e" id="wSr-er-pBu"/>
+                        <outlet property="cancelBarButton" destination="S5P-gk-K1R" id="Zzr-aV-zvW"/>
                         <outlet property="collectionView" destination="JfI-qt-dbd" id="hnO-GP-dfz"/>
                         <outlet property="mapView" destination="irF-1c-eAW" id="Hbm-kL-oGq"/>
                         <outlet property="nameField" destination="4QE-cW-8Sq" id="mlK-Cz-ISL"/>
+                        <outlet property="saveBarButton" destination="lI7-oK-qeu" id="Bq5-oN-Jh3"/>
                         <outlet property="tableView" destination="9OL-9e-xjv" id="3bb-n3-fTc"/>
                     </connections>
                 </viewController>
