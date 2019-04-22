@@ -18,7 +18,8 @@ class Review {
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["title": title, "text": text, "rating": rating, "reviewUserID": reviewUserID, "date": date, "documentID": documentID]
+        let timeIntervalDate = date.timeIntervalSince1970
+        return ["title": title, "text": text, "rating": rating, "reviewUserID": reviewUserID, "date": timeIntervalDate]
     }
     
     init(title: String, text: String, rating: Int, reviewUserID: String, date: Date, documentID: String) {
@@ -35,7 +36,8 @@ class Review {
         let text = dictionary["text"] as! String? ?? ""
         let rating = dictionary["rating"] as! Int? ?? 0
         let reviewUserID = dictionary["reviewUserID"] as! String? ?? ""
-        let date = dictionary["date"] as! Date? ?? Date()
+        let timeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
+        let date = Date(timeIntervalSince1970: timeIntervalDate)
         self.init(title: title, text: text, rating: rating, reviewUserID: reviewUserID, date: date, documentID: "")
     }
     

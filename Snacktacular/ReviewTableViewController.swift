@@ -24,6 +24,7 @@ class ReviewTableViewController: UITableViewController {
     
     var spot: Spot!
     var review: Review!
+    let dateFormatter = DateFormatter()
     
     var rating = 0 {
         didSet {

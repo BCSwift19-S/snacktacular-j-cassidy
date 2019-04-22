@@ -10,6 +10,7 @@ target 'Snacktacular' do
     pod 'Firebase/Core'
     pod 'Firebase/Storage'
     pod 'Firebase/Firestore'
-    pod 'FirebaseUI'
+    pod 'FirebaseUI/Auth'
+    pod 'FirebaseUI/Google'
     pod 'SDWebImage', '~> 4.0'
 end
