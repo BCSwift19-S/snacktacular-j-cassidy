@@ -64,7 +64,7 @@ class Review {
                     completed(true)
                 }
             }
-        }else {
+        } else {
             var ref: DocumentReference? = nil
             ref = db.collection("spots").document(spot.documentID).collection("reviews").addDocument(data: dataToSave) { error in
                 if let error = error {

@@ -33,6 +33,14 @@ class Photo {
         self.init(image: UIImage(), description: "", postedBy: postedBy, date: Date(), documentUUID: "")
     }
     
+    convenience init(dictionary: [String: Any]) {
+        let description = dictionary["description"] as! String? ?? ""
+        let postedBy = dictionary["postedBy"] as! String? ?? ""
+        let timeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
+        let date = Date(timeIntervalSince1970: timeIntervalDate)
+        self.init(image: UIImage(), description: description, postedBy: postedBy, date: date, documentUUID: "")
+    }
+    
     func saveData(spot: Spot, completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         let storage = Storage.storage()
@@ -42,9 +50,18 @@ class Photo {
             return completed(false)
         }
         
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/jpeg"
+        
         documentUUID = UUID().uuidString // generate unique ID to use for photo image's name
         let storageRef = storage.reference().child(spot.documentID).child(self.documentUUID)
-        let uploadTask = storageRef.putData(photoData)
+        let uploadTask = storageRef.putData(photoData, metadata: uploadMetadata){metadata, error in
+            guard error == nil else {
+                print("error during put data storage upload for reference \(storageRef). Error: \(error!.localizedDescription)")
+                return
+            }
+            print("upload worked, metadata is \(metadata)")
+        }
         
         uploadTask.observe(.success) {(snapshot) in
             let dataToSave = self.dictionary
