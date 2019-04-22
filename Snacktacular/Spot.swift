@@ -112,4 +112,34 @@ class Spot: NSObject, MKAnnotation {
         }
     }
     
+    func updateAverageRating(completed: @escaping () -> () ) {
+        let db = Firestore.firestore()
+        let reviewRef = db.collection("spots").document(self.documentID).collection("reviews")
+        reviewRef.getDocuments { (querySnapshot, error) in
+            guard error == nil else {
+                print("*** failed to get query snapshot of reviews for reviewRef: \(reviewRef.path), \(error!.localizedDescription)")
+                return completed()
+            }
+            var ratingTotal = 0.0
+            for document in querySnapshot!.documents {
+                let reviewDictionary = document.data()
+                let rating = reviewDictionary["rating"] as! Int? ?? 0
+                ratingTotal = ratingTotal + Double(rating)
+            }
+            
+            self.averageRating = ratingTotal / Double(querySnapshot!.count)
+            self.numberOfReviews = querySnapshot!.count
+            let dataToSave = self.dictionary
+            let spotRef = db.collection("spots").document(self.documentID)
+            spotRef.setData(dataToSave) { error in
+                guard error == nil else {
+                    print("**** error in updating document \(self.documentID) in spot after changing average rating and number of reviews - \(error!.localizedDescription)")
+                    return completed()
+                }
+                print("*** document updated with ref id \(self.documentID)")
+                completed()
+                
+            }
+        }
+    }
 }
